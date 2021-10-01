@@ -1,35 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
-
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
-  }
-
-  tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
-    }));
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <div>
-        Seconds: {this.state.seconds}
-      </div>
-    );
-  }
-}
 
 class Clock extends Component {
   constructor(props) {
@@ -44,21 +13,27 @@ class Clock extends Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000)
+    this.timerID = setInterval(() => this.tick(), 1000)
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.timerID)
   }
-
 
   render() {
     return (
       <div>
-        Seconds: {this.state.seconds}
+        <h3>Class Clock</h3>
+        <div>Seconds: {this.state.seconds}</div>
+        <button
+          onClick={() => this.componentWillUnmount()}
+        >Stop Clock</button>
+        <button
+          onClick={() => this.componentDidMount()}
+        >Start Clock</button>
       </div>
     )
   }
 }
 
-export { Clock, Timer }
+export { Clock }
