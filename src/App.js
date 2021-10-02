@@ -1,16 +1,19 @@
-import { Clock } from './components/Clock'
-import { DumbClock } from './components/DumbClock'
-import TitleCount from './components/TitleCount';
+import FadeIn from './components/utility/FadeIn';
+import React, { useEffect } from 'react';
 import './App.css';
 
 
 function App() {
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <Clock />
-        <DumbClock />
-      </header>
+      <FadeIn className="jumbo">
+        Heading 1
+      </FadeIn>
     </div>
   );
 }
