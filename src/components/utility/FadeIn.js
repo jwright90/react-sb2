@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import './FadeIn.css';
 
 const FadeIn = ({ children, className, id }) => {
@@ -16,7 +16,7 @@ const FadeIn = ({ children, className, id }) => {
     console.log(clicked2);
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const heading = document.querySelector('.fadein');
     heading.innerHTML = heading.innerText
       .split('')
@@ -31,6 +31,7 @@ const FadeIn = ({ children, className, id }) => {
       console.log(heading.innerHTML)
     }
   }, [clicked])
+
 
   return (
     <div className="center">

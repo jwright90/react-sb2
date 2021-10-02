@@ -1,19 +1,14 @@
-import FadeIn from './components/utility/FadeIn';
+import TextAnimation from './components/TextAnimation';
 import React, { useEffect } from 'react';
 import './App.css';
 
 
 function App() {
 
-  useEffect(() => {
-
-  }, [])
-
   return (
     <div className="App">
-      <FadeIn className="jumbo">
-        Heading 1
-      </FadeIn>
+      <TextAnimation>Do The Worm</TextAnimation>
+
     </div>
   );
 }
